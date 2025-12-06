@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixes Nossos de Cada Dia!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: #32CD32;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .event-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        .copy-btn {
+            background: #32CD32;
+            color: white;
+            border: none;
+            padding: 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            margin: 20px 0;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .copy-btn:hover {
+            background: #28a428;
+            transform: translateY(-2px);
+        }
+        
+        .copy-btn:active {
+            transform: translateY(0);
+        }
+        
+        .success-msg {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+        
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .instructions li {
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        .qr-section {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            .copy-btn {
+                padding: 18px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">💰</div>
+        
+        <h1>Pagamento PIX - Evento Pd Ipi</h1>
+        <p style="color: #666; margin-bottom: 20px;">Clique para copiar automaticamente</p>
+        
+        <div class="event-info">
+            <div class="info-item">
+                <span>Evento:</span>
+                <span style="font-weight: bold; color: #32CD32;">IPIRA UNIDADE A</span>
+            </div>
+            <div class="info-item">
+                <span>Valor:</span>
+                <span style="font-weight: bold;">Confira o Valor do Lote</span>
+            </div>
+            <div class="info-item">
+                <span>Identifique:</span>
+                <span>"SEU NOME + IPIRA-A"</span>
+            </div>
+        </div>
+        
+        <button class="copy-btn" id="copyButton">
+            📋 COPIAR CÓDIGO PIX
+        </button>
+        
+        <div class="success-msg" id="successMsg">
+            ✅ Código PIX copiado com sucesso!
+        </div>
+        
+        <div class="qr-section">
+            <p style="margin-bottom: 15px; font-weight: bold;">📱 PREFERE ESCANEAR?</p>
+            <div class="qr-placeholder">
+                <div style="font-size: 40px;">🎫</div>
+                <div style="margin-top: 10px;">QR Code do Evento</div>
+                <div style="font-size: 12px; margin-top: 5px;">(Disponível no local)</div>
+            </div>
+            <p style="margin-top: 15px; color: #666; font-size: 14px;">Use o QR Code no local do evento para pagamento instantâneo</p>
+        </div>
+        
+        <div class="instructions">
+            <p style="font-weight: bold; margin-bottom: 10px;">📝 COMO PAGAR:</p>
+            <ol>
+                <li>Clique no botão "COPIAR CÓDIGO PIX" acima</li>
+                <li>Abra o app do seu banco</li>
+                <li>Vá para a seção PIX</li>
+                <li>Escolha "PIX Copia e Cola"</li>
+                <li>Cole o código e confirme o pagamento</li>
+            </ol>
+        </div>
+        
+        <p style="margin-top: 25px; color: #888; font-size: 12px;">
+            Dúvidas? WhatsApp: (11) 97195-3219
+        </p>
+    </div>
+
+    <script>
+        // SEU CÓDIGO PIX AQUI (substitua pelo seu)
+        const PIX_CODE = "00020101021226900014BR.GOV.BCB.PIX2568pix-qr.mercadopago.com/instore/p/v2/7589642fcde745279b73b74b31519c3d43540016com.mercadolibre0130https://mpago.la/pos/1224719795204000053039865802BR5925PE DESCALCO UNIDADE IPIRA6009SAO PAULO62070503***63048E77";
+        
+        const copyButton = document.getElementById('copyButton');
+        const successMsg = document.getElementById('successMsg');
+        
+        copyButton.addEventListener('click', async () => {
+            try {
+                // Tenta usar a API moderna
+                await navigator.clipboard.writeText(PIX_CODE);
+                
+                // Mostra mensagem de sucesso
+                successMsg.style.display = 'block';
+                copyButton.innerHTML = '✅ COPIADO!';
+                copyButton.style.background = '#28a428';
+                
+                // Restaura após 3 segundos
+                setTimeout(() => {
+                    copyButton.innerHTML = '📋 COPIAR CÓDIGO PIX';
+                    copyButton.style.background = '#32CD32';
+                    successMsg.style.display = 'none';
+                }, 3000);
+                
+            } catch (err) {
+                // Fallback para navegadores antigos
+                const textArea = document.createElement('textarea');
+                textArea.value = PIX_CODE;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Mensagem alternativa
+                alert('✅ Código PIX copiado! Agora abra seu app do banco e cole.');
+            }
+        });
+        
+        // Toque vibratório em dispositivos móveis (se suportado)
+        copyButton.addEventListener('touchstart', () => {
+            if (navigator.vibrate) {
+                navigator.vibrate(50);
+            }
+        });
+    </script>
+</body>
+</html>

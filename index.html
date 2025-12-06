@@ -173,7 +173,7 @@
         <div class="event-info">
             <div class="info-item">
                 <span>Evento:</span>
-                <span style="font-weight: bold; color: #32CD32;">PÉ DESCALÇO UNIDADE IPIRANGA</span>
+                <span style="font-weight: bold; color: #32CD32;">Baile</span>
             </div>
             <div class="info-item">
                 <span>Valor:</span>
@@ -181,7 +181,7 @@
             </div>
             <div class="info-item">
                 <span>Identificador:</span>
-                <span>"Bix Edição Natalina"</span>
+                <span>Bix Edição Natalina</span>
             </div>
         </div>
         
@@ -194,14 +194,39 @@
         </div>
         
         <div class="qr-section">
-            <p style="margin-bottom: 15px; font-weight: bold;">📱 PREFERE ESCANEAR?</p>
-            <div class="qr-placeholder">
-                <div style="font-size: 40px;">🎫</div>
-                <div style="margin-top: 10px;">QR Code do Evento</div>
-                <div style="font-size: 12px; margin-top: 5px;">(Disponível no local)</div>
+    <p style="margin-bottom: 15px; font-weight: bold; color: var(--azul-escuro); display: flex; align-items: center; justify-content: center; gap: 10px;">
+        <i class="fas fa-qrcode" style="color: var(--verde-escuro);"></i> 
+        <span>PAGAMENTO VIA QR CODE</span>
+    </p>
+    
+    <div style="text-align: center; margin: 20px 0; padding: 15px; background: var(--branco); border-radius: var(--radius); border: 1px solid rgba(112, 193, 50, 0.2); box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+        <!-- IMAGEM DO QR CODE - SUBSTITUIR A URL -->
+        <img src="https://github.com/fabioboas/PixesPdIpi/blob/main/qr-codes/QrBixNatalino.png" 
+             alt="QR Code PIX Evento IPI" 
+             id="qrCodeImageBix"
+             style="width: 220px; height: 220px; border-radius: 8px; display: block; margin: 0 auto;">
+        
+        <!-- FALLBACK SE NÃO TIVER IMAGEM -->
+        <div id="qrFallback" style="display: none; padding: 30px;">
+            <div style="width: 200px; height: 200px; background: var(--cinza-claro); border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; border: 2px dashed rgba(0,144,204,0.3);">
+                <div style="font-size: 48px; color: var(--azul-medio);">📱</div>
+                <div style="margin-top: 15px; color: var(--azul-escuro); font-weight: 400;">Escaneie no App</div>
+                <div style="font-size: 13px; margin-top: 5px; color: var(--vermelho);">Use PIX Copia e Cola</div>
             </div>
-            <p style="margin-top: 15px; color: #666; font-size: 14px;">Use o QR Code no local do evento para pagamento instantâneo</p>
         </div>
+        
+        <p style="margin-top: 15px; color: var(--verde-escuro); font-size: 14px; font-weight: 400;">
+            <i class="fas fa-camera"></i> Aponte a câmera do celular para escanear
+        </p>
+    </div>
+    
+    <div style="background: rgba(146, 243, 85, 0.1); padding: 12px; border-radius: 8px; margin-top: 10px; border: 1px solid rgba(146, 243, 85, 0.2);">
+        <p style="color: var(--verde-escuro); font-size: 13px; text-align: center; margin: 0;">
+            <i class="fas fa-lightbulb"></i> 
+            <strong>Dica:</strong> O QR Code é mais rápido! Escaneie direto pelo app do seu banco.
+        </p>
+    </div>
+</div>
         
         <div class="instructions">
             <p style="font-weight: bold; margin-bottom: 10px;">📝 COMO PAGAR:</p>
@@ -220,7 +245,7 @@
     </div>
 
     <script>
-        // SEU CÓDIGO PIX AQUI (substitua pelo seu)
+        // CÓDIGO PIX AQUI
         const PIX_CODE = "00020101021226900014BR.GOV.BCB.PIX2568pix-qr.mercadopago.com/instore/p/v2/7589642fcde745279b73b74b31519c3d43540016com.mercadolibre0130https://mpago.la/pos/1224719795204000053039865802BR5925PE DESCALCO UNIDADE IPIRA6009SAO PAULO62070503***63048E77";
         
         const copyButton = document.getElementById('copyButton');

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixes Nossos de Cada Dia!</title>
+    <title>PIX - Baile de Carnaval PD Ipi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,66 +13,161 @@
             font-family: 'Segoe UI', Arial, sans-serif;
         }
         
+        :root {
+            --verde: #32CD32;
+            --verde-escuro: #28a428;
+            --amarelo: #FFD700;
+            --laranja: #FF8C00;
+            --roxo: #9370DB;
+            --branco: #FFFFFF;
+            --cinza-claro: #f8f9fa;
+            --cinza: #555;
+            --preto: #333;
+            --azul: #4169E1;
+            --vermelho: #DC143C;
+            --radius: 15px;
+        }
+        
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FFD700 0%, #FF8C00 25%, #FF1493 50%, #9370DB 75%, #4169E1 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         .container {
-            background: white;
-            border-radius: 20px;
+            background: var(--branco);
+            border-radius: var(--radius);
             padding: 30px;
             max-width: 500px;
             width: 100%;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--amarelo), var(--laranja), var(--vermelho), var(--roxo), var(--azul));
         }
         
         .logo {
-            width: 80px;
-            height: 80px;
-            background: #32CD32;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--amarelo), var(--laranja));
             border-radius: 50%;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            color: white;
+            font-size: 45px;
+            color: var(--branco);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
         }
         
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 24px;
+        .carnaval-title {
+            color: var(--roxo);
+            font-size: 28px;
+            margin-bottom: 5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            color: var(--vermelho);
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
         
         .event-info {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
+            background: var(--cinza-claro);
+            padding: 20px;
+            border-radius: var(--radius);
             margin: 20px 0;
             text-align: left;
+            border-left: 5px solid var(--roxo);
         }
         
         .info-item {
             display: flex;
             justify-content: space-between;
-            margin: 8px 0;
-            color: #555;
+            margin: 10px 0;
+            color: var(--cinza);
+            font-size: 16px;
+        }
+        
+        .info-highlight {
+            color: var(--vermelho);
+            font-weight: bold;
+        }
+        
+        .info-free {
+            color: var(--verde-escuro);
+            font-weight: bold;
+        }
+        
+        .price-card {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            gap: 15px;
+        }
+        
+        .price-box {
+            flex: 1;
+            padding: 15px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .price-box.free {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border: 2px solid var(--verde);
+        }
+        
+        .price-box.paid {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border: 2px solid var(--laranja);
+        }
+        
+        .price-label {
+            font-size: 14px;
+            color: var(--cinza);
+            margin-bottom: 5px;
+        }
+        
+        .price-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--preto);
         }
         
         .copy-btn {
-            background: #32CD32;
-            color: white;
+            background: linear-gradient(135deg, var(--roxo), var(--azul));
+            color: var(--branco);
             border: none;
             padding: 20px;
             font-size: 18px;
-            border-radius: 10px;
+            border-radius: var(--radius);
             cursor: pointer;
             width: 100%;
             margin: 20px 0;
@@ -81,11 +177,13 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            box-shadow: 0 8px 20px rgba(147, 112, 219, 0.3);
         }
         
         .copy-btn:hover {
-            background: #28a428;
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, var(--azul), var(--roxo));
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(147, 112, 219, 0.4);
         }
         
         .copy-btn:active {
@@ -96,18 +194,20 @@
             background: #d4edda;
             color: #155724;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: var(--radius);
             margin: 15px 0;
             display: none;
             animation: fadeIn 0.3s;
+            border-left: 5px solid var(--verde);
         }
         
         .instructions {
             background: #e3f2fd;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 20px;
+            border-radius: var(--radius);
             margin-top: 20px;
             text-align: left;
+            border-left: 5px solid var(--azul);
         }
         
         .instructions ol {
@@ -117,20 +217,20 @@
         
         .instructions li {
             margin: 8px 0;
-            color: #555;
+            color: var(--cinza);
         }
         
         .qr-section {
             margin: 25px 0;
             padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
+            background: var(--cinza-claro);
+            border-radius: var(--radius);
         }
         
         .qr-placeholder {
             width: 200px;
             height: 200px;
-            background: #fff;
+            background: var(--branco);
             border: 2px dashed #ddd;
             border-radius: 10px;
             margin: 0 auto;
@@ -142,9 +242,24 @@
             font-size: 14px;
         }
         
+        .carnaval-icon {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
         }
         
         @media (max-width: 480px) {
@@ -152,104 +267,146 @@
                 padding: 20px;
             }
             
-            h1 {
-                font-size: 20px;
+            .carnaval-title {
+                font-size: 22px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
             }
             
             .copy-btn {
                 padding: 18px;
                 font-size: 16px;
             }
+            
+            .price-card {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">💰</div>
+        <div class="logo">
+            <i class="fas fa-mask"></i>
+        </div>
         
-        <h1>Pagamento PIX - Evento Pd Ipi</h1>
-        <p style="color: #666; margin-bottom: 20px;">Clique para copiar automaticamente</p>
+        <h1 class="carnaval-title">Baile de Carnaval PD</h1>
+        <p class="subtitle">Pague com PIX e garanta sua diversão!</p>
         
         <div class="event-info">
             <div class="info-item">
-                <span>Evento:</span>
-                <span style="font-weight: bold; color: #32CD32;">Baile</span>
+                <span><i class="fas fa-calendar-alt carnaval-icon"></i> Data:</span>
+                <span class="info-highlight">01/02/2026</span>
             </div>
             <div class="info-item">
-                <span>Valor:</span>
-                <span style="font-weight: bold;">Confira o Valor do Lote</span>
+                <span><i class="fas fa-clock carnaval-icon"></i> Horário:</span>
+                <span class="info-highlight">17h às 20h</span>
             </div>
             <div class="info-item">
-                <span>Identificador:</span>
-                <span>Bix Edição Natalina</span>
+                <span><i class="fas fa-users carnaval-icon"></i> Tipo:</span>
+                <span class="info-highlight">Baile Carnavalesco</span>
             </div>
         </div>
         
-        <button class="copy-btn" id="copyButton">
-            📋 COPIAR CÓDIGO PIX
+        <div class="price-card">
+            <div class="price-box free">
+                <div class="price-label">Para Rede PD</div>
+                <div class="price-value">GRATUITO</div>
+                <div style="font-size: 12px; color: var(--verde-escuro); margin-top: 5px;">Matriculados</div>
+            </div>
+            
+            <div class="price-box paid">
+                <div class="price-label">Para Amigos</div>
+                <div class="price-value">R$ 15,00</div>
+                <div style="font-size: 12px; color: var(--laranja); margin-top: 5px;">Não matriculados</div>
+            </div>
+        </div>
+        
+        <p style="color: var(--cinza); margin-bottom: 10px; text-align: center;">
+            <i class="fas fa-info-circle"></i> Pague via PIX para confirmar sua participação
+        </p>
+        
+        <button class="copy-btn pulse-animation" id="copyButton">
+            <i class="fas fa-copy"></i> COPIAR CÓDIGO PIX
         </button>
         
         <div class="success-msg" id="successMsg">
-            ✅ Código PIX copiado com sucesso!
+            <i class="fas fa-check-circle"></i> Código PIX copiado com sucesso!
         </div>
         
         <div class="qr-section">
-    <p style="margin-bottom: 15px; font-weight: bold; color: var(--azul-escuro); display: flex; align-items: center; justify-content: center; gap: 10px;">
-        <i class="fas fa-qrcode" style="color: var(--verde-escuro);"></i> 
-        <span>PAGAMENTO VIA QR CODE</span>
-    </p>
-    
-    <div style="text-align: center; margin: 20px 0; padding: 15px; background: var(--branco); border-radius: var(--radius); border: 1px solid rgba(112, 193, 50, 0.2); box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-        <!-- IMAGEM DO QR CODE - SUBSTITUIR A URL -->
-        <img src="https://raw.githubusercontent.com/fabioboas/PixesPdIpi/main/qr-codes/QrBixNatalino.png" 
-         alt="QR Code PIX Evento IPI" 
-         id="qrCodeImage"
-         style="width: 220px; height: 220px; border-radius: 8px; display: block; margin: 0 auto; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
-        
-        <!-- FALLBACK SE NÃO TIVER IMAGEM -->
-        <div id="qrFallback" style="display: none; padding: 30px;">
-            <div style="width: 200px; height: 200px; background: var(--cinza-claro); border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; border: 2px dashed rgba(0,144,204,0.3);">
-                <div style="font-size: 48px; color: var(--azul-medio);">📱</div>
-                <div style="margin-top: 15px; color: var(--azul-escuro); font-weight: 400;">Escaneie no App</div>
-                <div style="font-size: 13px; margin-top: 5px; color: var(--vermelho);">Use PIX Copia e Cola</div>
+            <p style="margin-bottom: 15px; font-weight: bold; color: var(--roxo); display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <i class="fas fa-qrcode"></i> 
+                <span>PAGAMENTO VIA QR CODE</span>
+            </p>
+            
+            <div style="text-align: center; margin: 20px 0; padding: 15px; background: var(--branco); border-radius: var(--radius); border: 1px solid rgba(147, 112, 219, 0.2); box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <!-- MESMA IMAGEM DO QR CODE -->
+                <img src="https://raw.githubusercontent.com/fabioboas/PixesPdIpi/main/qr-codes/QrBixNatalino.png" 
+                 alt="QR Code PIX Baile Carnaval PD" 
+                 id="qrCodeImage"
+                 style="width: 220px; height: 220px; border-radius: 8px; display: block; margin: 0 auto; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
+                
+                <!-- FALLBACK SE NÃO TIVER IMAGEM -->
+                <div id="qrFallback" style="display: none; padding: 30px;">
+                    <div style="width: 200px; height: 200px; background: var(--cinza-claro); border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; border: 2px dashed rgba(147, 112, 219, 0.3);">
+                        <div style="font-size: 48px; color: var(--roxo);">📱</div>
+                        <div style="margin-top: 15px; color: var(--roxo); font-weight: 400;">Escaneie no App</div>
+                        <div style="font-size: 13px; margin-top: 5px; color: var(--vermelho);">Use PIX Copia e Cola</div>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 15px; color: var(--verde-escuro); font-size: 14px; font-weight: 400;">
+                    <i class="fas fa-camera"></i> Aponte a câmera do celular para escanear
+                </p>
+            </div>
+            
+            <div style="background: rgba(147, 112, 219, 0.1); padding: 12px; border-radius: 8px; margin-top: 10px; border: 1px solid rgba(147, 112, 219, 0.2);">
+                <p style="color: var(--roxo); font-size: 13px; text-align: center; margin: 0;">
+                    <i class="fas fa-lightbulb"></i> 
+                    <strong>Dica:</strong> O QR Code é mais rápido! Escaneie direto pelo app do seu banco.
+                </p>
             </div>
         </div>
         
-        <p style="margin-top: 15px; color: var(--verde-escuro); font-size: 14px; font-weight: 400;">
-            <i class="fas fa-camera"></i> Aponte a câmera do celular para escanear
-        </p>
-    </div>
-    
-    <div style="background: rgba(146, 243, 85, 0.1); padding: 12px; border-radius: 8px; margin-top: 10px; border: 1px solid rgba(146, 243, 85, 0.2);">
-        <p style="color: var(--verde-escuro); font-size: 13px; text-align: center; margin: 0;">
-            <i class="fas fa-lightbulb"></i> 
-            <strong>Dica:</strong> O QR Code é mais rápido! Escaneie direto pelo app do seu banco.
-        </p>
-    </div>
-</div>
-        
         <div class="instructions">
-            <p style="font-weight: bold; margin-bottom: 10px;">📝 COMO PAGAR:</p>
+            <p style="font-weight: bold; margin-bottom: 10px; color: var(--azul);">
+                <i class="fas fa-graduation-cap"></i> COMO PAGAR COM PIX:
+            </p>
             <ol>
                 <li>Clique no botão "COPIAR CÓDIGO PIX" acima</li>
-                <li>Abra o app do seu banco</li>
-                <li>Vá para a seção PIX</li>
-                <li>Escolha "PIX Copia e Cola"</li>
-                <li>Cole o código e confirme o pagamento</li>
+                <li>Abra o app do seu banco ou fintech</li>
+                <li>Vá para a seção PIX/Transferência</li>
+                <li>Escolha a opção "PIX Copia e Cola"</li>
+                <li>Cole o código, confirme o valor e finalize</li>
             </ol>
         </div>
         
-        <p style="margin-top: 25px; color: #888; font-size: 12px;">
-            Dúvidas? WhatsApp: (11) 97195-3219
+        <p style="margin-top: 25px; color: var(--cinza); font-size: 13px; text-align: center;">
+            <i class="fas fa-music"></i> <strong>Traje:</strong> Fantasia de carnaval é bem-vinda!
+        </p>
+        
+        <p style="margin-top: 15px; color: #888; font-size: 12px; text-align: center;">
+            <i class="fas fa-question-circle"></i> Dúvidas? WhatsApp: (11) 97195-3219
         </p>
     </div>
 
     <script>
-        // CÓDIGO PIX AQUI
+        // MESMO CÓDIGO PIX DO EVENTO ANTERIOR
         const PIX_CODE = "00020101021226900014BR.GOV.BCB.PIX2568pix-qr.mercadopago.com/instore/p/v2/7589642fcde745279b73b74b31519c3d43540016com.mercadolibre0130https://mpago.la/pos/1224719795204000053039865802BR5925PE DESCALCO UNIDADE IPIRA6009SAO PAULO62070503***63048E77";
         
         const copyButton = document.getElementById('copyButton');
         const successMsg = document.getElementById('successMsg');
+        const qrCodeImage = document.getElementById('qrCodeImage');
+        const qrFallback = document.getElementById('qrFallback');
+        
+        // Verifica se a imagem do QR Code carregou
+        qrCodeImage.onerror = function() {
+            qrCodeImage.style.display = 'none';
+            qrFallback.style.display = 'block';
+        };
         
         copyButton.addEventListener('click', async () => {
             try {
@@ -258,15 +415,25 @@
                 
                 // Mostra mensagem de sucesso
                 successMsg.style.display = 'block';
-                copyButton.innerHTML = '✅ COPIADO!';
-                copyButton.style.background = '#28a428';
+                copyButton.innerHTML = '<i class="fas fa-check"></i> CÓDIGO COPIADO!';
+                copyButton.style.background = 'linear-gradient(135deg, var(--verde), var(--verde-escuro))';
+                copyButton.classList.remove('pulse-animation');
                 
-                // Restaura após 3 segundos
+                // Toque vibratório em dispositivos móveis (se suportado)
+                if (navigator.vibrate) {
+                    navigator.vibrate([100, 50, 100]);
+                }
+                
+                // Efeito de confete visual
+                createConfetti();
+                
+                // Restaura após 4 segundos
                 setTimeout(() => {
-                    copyButton.innerHTML = '📋 COPIAR CÓDIGO PIX';
-                    copyButton.style.background = '#32CD32';
+                    copyButton.innerHTML = '<i class="fas fa-copy"></i> COPIAR CÓDIGO PIX';
+                    copyButton.style.background = 'linear-gradient(135deg, var(--roxo), var(--azul))';
+                    copyButton.classList.add('pulse-animation');
                     successMsg.style.display = 'none';
-                }, 3000);
+                }, 4000);
                 
             } catch (err) {
                 // Fallback para navegadores antigos
@@ -278,7 +445,7 @@
                 document.body.removeChild(textArea);
                 
                 // Mensagem alternativa
-                alert('✅ Código PIX copiado! Agora abra seu app do banco e cole.');
+                alert('✅ Código PIX copiado! Agora abra seu app do banco e cole para pagar R$ 15,00.');
             }
         });
         
@@ -287,6 +454,56 @@
             if (navigator.vibrate) {
                 navigator.vibrate(50);
             }
+        });
+        
+        // Função para criar efeito de confete visual
+        function createConfetti() {
+            const confettiCount = 30;
+            const container = document.querySelector('.container');
+            
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.innerHTML = ['🎉', '🎊', '🥳', '🎈', '💃', '🕺', '✨'][Math.floor(Math.random() * 7)];
+                confetti.style.position = 'absolute';
+                confetti.style.fontSize = Math.random() * 20 + 15 + 'px';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-30px';
+                confetti.style.opacity = '1';
+                confetti.style.zIndex = '9999';
+                confetti.style.pointerEvents = 'none';
+                confetti.style.userSelect = 'none';
+                
+                container.appendChild(confetti);
+                
+                // Animação
+                const animation = confetti.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                    { transform: `translateY(${Math.random() * 300 + 300}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 1000 + 2000,
+                    easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                });
+                
+                // Remove após animação
+                animation.onfinish = () => {
+                    confetti.remove();
+                };
+            }
+        }
+        
+        // Inicialização: verifica se a imagem do QR Code existe
+        window.addEventListener('load', function() {
+            fetch(qrCodeImage.src)
+                .then(response => {
+                    if (!response.ok) {
+                        qrCodeImage.style.display = 'none';
+                        qrFallback.style.display = 'block';
+                    }
+                })
+                .catch(() => {
+                    qrCodeImage.style.display = 'none';
+                    qrFallback.style.display = 'block';
+                });
         });
     </script>
 </body>

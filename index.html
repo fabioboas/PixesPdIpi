@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>PIX - Baile da Independência | PD Ipiranga</title>
+    <title>PIX do BIX- Baile da Independência ou Xote | PD Ipiranga</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -146,33 +146,21 @@
             border-radius: 30px;
         }
         
-        .highlight-chope {
-            color: #B45309;
-            font-weight: 800;
-            background: rgba(245,158,11,0.15);
-            padding: 2px 12px;
-            border-radius: 30px;
-            display: inline-block;
-        }
-        
-        .drinks-highlight {
-            background: #1F2937;
+        .open-bar-btn {
+            background: linear-gradient(105deg, #1E3A8A, #2563EB);
             color: white;
-            padding: 12px;
-            border-radius: 48px;
-            margin: 18px 0;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            border-radius: 60px;
+            width: 100%;
+            margin: 15px 0 5px;
+            font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            flex-wrap: wrap;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        
-        .drinks-highlight i {
-            font-size: 20px;
-            color: #FCD34D;
+            box-shadow: 0 5px 15px rgba(30,58,138,0.3);
         }
         
         .copy-btn {
@@ -346,9 +334,6 @@
                 align-items: flex-start;
                 gap: 4px;
             }
-            .drinks-highlight {
-                font-size: 12px;
-            }
         }
         
         .badge-edicao {
@@ -360,16 +345,6 @@
             font-weight: 600;
             display: inline-block;
             margin-bottom: 8px;
-        }
-        
-        .aviso-lote {
-            background: #FEF3C7;
-            border-radius: 16px;
-            padding: 12px;
-            margin-top: 15px;
-            font-size: 13px;
-            color: #92400E;
-            border-left: 4px solid #F59E0B;
         }
         
         .pix-info {
@@ -403,6 +378,19 @@
             color: #E11D48;
             text-decoration: underline;
         }
+        
+        .phone-link {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .phone-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -415,8 +403,8 @@
             <i class="fas fa-star-of-life"></i> 3ª Edição Especial · Ingressos por Lote
         </div>
         
-        <h1 class="carnaval-title">🎭 BIX - Baile da Independência ou Xote 🎻</h1>
-        <p class="subtitle">🇧🇷 Vem pro melhor evento do semestre! 🇧🇷</p>
+        <h1 class="carnaval-title">BIX - Baile da Independência ou Xote</h1>
+        <p class="subtitle">Vem pro melhor evento do semestre!</p>
         
         <div class="event-info">
             <div class="info-item">
@@ -425,28 +413,27 @@
             </div>
             <div class="info-item">
                 <span><i class="fas fa-clock" style="color:#F59E0B;"></i> A partir das:</span>
-                <span class="info-highlight">22h30 🔥</span>
+                <span class="info-highlight">22h30</span>
             </div>
             <div class="info-item">
                 <span><i class="fas fa-map-marker-alt" style="color:#1E3A8A;"></i> Local:</span>
                 <span class="info-highlight">PD Ipiranga — Rua Lino Coutinho, 1927</span>
             </div>
-            <div class="info-item">
-                <span><i class="fas fa-beer" style="color:#B45309;"></i> Open bar:</span>
-                <span class="highlight-chope"><i class="fas fa-mug-hot"></i> 50L de Chopp + Refri e Suco liberados!</span>
-            </div>
         </div>
         
-        <div class="drinks-highlight">
-            <i class="fas fa-beer"></i> <span>50 LITROS DE CHOPP</span> <i class="fas fa-wine-bottle"></i>
-            <i class="fas fa-cocktail"></i> <span>Refrigerante & Suco à vontade</span>
+        <!-- Botão Open Bar (estilo azul) -->
+        <div class="open-bar-btn">
+            <i class="fas fa-beer"></i> 50L de Chopp + Refri e Suco liberados! <i class="fas fa-glass-cheers"></i>
         </div>
         
+        <!-- Bloco único de lotes unificado -->
         <div class="info-lotes">
             <i class="fas fa-chart-simple"></i>
             <p style="font-weight: 800; color:#1E3A8A; margin: 8px 0 4px;">🎟️ INGRESSOS DIVULGADOS EM LOTES</p>
             <p style="color: #4B5563; font-size: 14px;">Os valores serão divulgados por lote conforme a demanda. Fique atento aos nossos canais oficiais e garanta o seu com o melhor preço!</p>
-            <!-- Central de Vendas REMOVIDA conforme solicitado -->
+            <div style="margin-top: 12px; padding: 10px; background: #FEF3C7; border-radius: 16px; font-size: 13px; color: #92400E;">
+                <i class="fas fa-tag"></i> <strong>Lotes:</strong> Os preços são liberados por etapas. Quanto mais cedo, melhor o valor! Fique ligado no <a href="https://www.instagram.com/pdipiranga/" target="_blank" style="color:#1E3A8A; font-weight:600; text-decoration:none;">@pdipiranga</a>.
+            </div>
         </div>
         
         <div class="pix-info">
@@ -508,23 +495,23 @@
                 <li>Confirme os dados e finalize o pagamento</li>
                 <li>Guarde o comprovante (foto ou PDF) — ele será solicitado na entrada</li>
             </ol>
-            <div class="aviso-lote">
-                <i class="fas fa-tag"></i> <strong>Lotes:</strong> Os preços são liberados por etapas. Quanto mais cedo, melhor o valor! Fique ligado no <a href="https://www.instagram.com/pdipiranga/" target="_blank" style="color:#1E3A8A; font-weight:600; text-decoration:none;">@pdipiranga</a>.
-            </div>
         </div>
         
-        <div style="margin: 20px 0 10px; background: #FFF1E6; border-radius: 28px; padding: 14px; text-align: center;">
-            <i class="fas fa-music" style="color:#F59E0B;"></i> <strong>Traje sugerido:</strong> Estilo independência, xote raiz, camisa da sorte ou fantasia criativa! 🎭
-            <div style="margin-top: 8px; font-size: 13px;"><i class="fas fa-location-dot"></i> PD Ipiranga — Venha comemorar com muito forró, chopp gelado e alegria contagiante!</div>
-            <a href="https://wa.me/5511971953219?text=Oi!%20Gostaria%20de%20informações%20sobre%20os%20lotes%20do%20Baile%20da%20Independência" target="_blank" class="btn-whatsapp" style="margin-top: 12px;">
+        <!-- WhatsApp Button -->
+        <div style="margin: 20px 0 10px; text-align: center;">
+            <a href="https://wa.me/5511971953219?text=Oi!%20Gostaria%20de%20informações%20sobre%20os%20lotes%20do%20Baile%20da%20Independência" target="_blank" class="btn-whatsapp">
                 <i class="fab fa-whatsapp"></i> Dúvidas sobre lotes? Fale conosco
             </a>
         </div>
         
-        <!-- Rodapé sucinto com apenas Instagram -->
+        <!-- Rodapé com Instagram e telefone -->
         <div class="footer-simple">
             <a href="https://www.instagram.com/pdipiranga/" target="_blank" class="instagram-link">
                 <i class="fab fa-instagram"></i> @pdipiranga
+            </a>
+            <span style="margin: 0 8px">•</span>
+            <a href="https://wa.me/5511971953219" target="_blank" class="phone-link">
+                <i class="fab fa-whatsapp"></i> (11) 97195-3219
             </a>
             <span style="margin: 0 8px">•</span>
             <span>Baile da Independência 30/04</span>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>PIX do BIX - Baile da Independência ou Xote | PD Ipiranga</title>
+    <title>PIX - Baile da Independência | PD Ipiranga</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -69,7 +69,6 @@
             background: linear-gradient(90deg, #FFD700, #F59E0B, #E11D48, #1E3A8A, #0B2B26);
         }
         
-        /* Efeito bandeira sutil */
         .container::after {
             content: "🇧🇷";
             position: absolute;
@@ -154,78 +153,6 @@
             padding: 2px 12px;
             border-radius: 30px;
             display: inline-block;
-        }
-        
-        .price-card {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
-            gap: 18px;
-        }
-        
-        .price-box {
-            flex: 1;
-            padding: 16px 8px;
-            border-radius: 24px;
-            text-align: center;
-            transition: all 0.2s;
-        }
-        
-        .price-box.free {
-            background: linear-gradient(135deg, #EFF6EF, #E0F2E0);
-            border: 1px solid #2E7D32;
-        }
-        
-        .price-box.lotes {
-            background: linear-gradient(135deg, #FFF3E0, #FFE6CC);
-            border: 1px solid #F59E0B;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .price-box.lotes::after {
-            content: "🎟️";
-            position: absolute;
-            bottom: 5px;
-            right: 8px;
-            font-size: 28px;
-            opacity: 0.2;
-            pointer-events: none;
-        }
-        
-        .price-label {
-            font-size: 14px;
-            color: var(--cinza);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .price-value {
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--preto);
-        }
-        
-        .lote-badge {
-            background: #F59E0B;
-            color: #1F2937;
-            border-radius: 40px;
-            padding: 4px 12px;
-            font-size: 12px;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 8px;
-        }
-        
-        .valor-dinamico {
-            font-size: 20px;
-            font-weight: 800;
-            color: #E11D48;
-            background: rgba(225,29,72,0.1);
-            padding: 6px 12px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-top: 8px;
         }
         
         .drinks-highlight {
@@ -414,10 +341,6 @@
                 padding: 16px;
                 font-size: 15px;
             }
-            .price-card {
-                flex-direction: column;
-                gap: 12px;
-            }
             .info-item {
                 flex-direction: column;
                 align-items: flex-start;
@@ -426,16 +349,6 @@
             .drinks-highlight {
                 font-size: 12px;
             }
-        }
-        
-        .faixa-destaque {
-            background: #FFD966;
-            color: #1E3A8A;
-            border-radius: 40px;
-            padding: 6px 12px;
-            font-weight: bold;
-            font-size: 13px;
-            display: inline-block;
         }
         
         .badge-edicao {
@@ -458,6 +371,38 @@
             color: #92400E;
             border-left: 4px solid #F59E0B;
         }
+        
+        .pix-info {
+            text-align: center;
+            margin: 15px 0;
+            padding: 12px;
+            background: #F3F4F6;
+            border-radius: 40px;
+        }
+        
+        .footer-simple {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #E5E7EB;
+            text-align: center;
+            font-size: 13px;
+            color: #6B7280;
+        }
+        
+        .instagram-link {
+            color: #1E3A8A;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        
+        .instagram-link:hover {
+            color: #E11D48;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -470,7 +415,7 @@
             <i class="fas fa-star-of-life"></i> 3ª Edição Especial · Ingressos por Lote
         </div>
         
-        <h1 class="carnaval-title">BIX - Baile da Independência ou Xote</h1>
+        <h1 class="carnaval-title">🎭 BIX - Baile da Independência ou Xote 🎻</h1>
         <p class="subtitle">🇧🇷 Vem pro melhor evento do semestre! 🇧🇷</p>
         
         <div class="event-info">
@@ -492,43 +437,22 @@
             </div>
         </div>
         
-        <!-- Destaque de bebidas animado -->
         <div class="drinks-highlight">
             <i class="fas fa-beer"></i> <span>50 LITROS DE CHOPP</span> <i class="fas fa-wine-bottle"></i>
             <i class="fas fa-cocktail"></i> <span>Refrigerante & Suco à vontade</span>
         </div>
         
-        <!-- NOVO: Cards sem preço fixo, informando venda por lotes -->
-        <div class="price-card">
-            <div class="price-box free">
-                <div class="price-label"><i class="fas fa-graduation-cap"></i> Alunos Rede PD</div>
-                <div class="price-value">GRATUITO</div>
-                <div style="font-size: 13px; color: #2E7D32; margin-top: 6px;">*com identificação de aluno</div>
-            </div>
-            
-            <div class="price-box lotes">
-                <div class="price-label"><i class="fas fa-chart-line"></i> Ingresso Amigo / Convidado</div>
-                <div class="price-value">POR LOTE</div>
-                <div class="lote-badge"><i class="fas fa-tags"></i> Lotes promocionais</div>
-                <div class="valor-dinamico">Valor varia por lote</div>
-                <div style="font-size: 12px; margin-top: 8px; color:#E11D48;"><i class="fas fa-bullhorn"></i> Garanta o seu no lote atual!</div>
-            </div>
-        </div>
-        
-        <!-- Bloco explicativo sobre a venda em lotes -->
         <div class="info-lotes">
             <i class="fas fa-chart-simple"></i>
             <p style="font-weight: 800; color:#1E3A8A; margin: 8px 0 4px;">🎟️ INGRESSOS DIVULGADOS EM LOTES</p>
             <p style="color: #4B5563; font-size: 14px;">Os valores serão divulgados por lote conforme a demanda. Fique atento aos nossos canais oficiais e garanta o seu com o melhor preço!</p>
-            <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 12px;">
-                <span style="background:#EFF6FF; padding:5px 12px; border-radius:40px; font-size:12px;"><i class="fab fa-instagram"></i> @pdipiranga</span>
-                <span style="background:#EFF6FF; padding:5px 12px; border-radius:40px; font-size:12px;"><i class="fab fa-whatsapp"></i> Central de Vendas</span>
-            </div>
+            <!-- Central de Vendas REMOVIDA conforme solicitado -->
         </div>
         
-        <p style="color: #4B5563; margin-bottom: 8px; text-align: center; background: #F3F4F6; padding: 8px; border-radius: 40px;">
-            <i class="fas fa-qrcode" style="color:#1E3A8A;"></i> Pague com PIX (Copia e Cola ou QR Code) — valor conforme lote vigente
-        </p>
+        <div class="pix-info">
+            <i class="fas fa-qrcode" style="color:#1E3A8A;"></i> 
+            <strong>Pague com PIX</strong> (Copia e Cola ou QR Code) — valor conforme lote vigente
+        </div>
         
         <button class="copy-btn pulse-animation" id="copyButton">
             <i class="fas fa-copy"></i> COPIAR CÓDIGO PIX (Copia e Cola)
@@ -547,7 +471,7 @@
             <div style="text-align: center; margin: 10px 0 5px;">
                 <div class="qr-code-wrapper">
                     <img src="https://raw.githubusercontent.com/fabioboas/PixesPdIpi/main/qr-codes/QrBixNatalino.png" 
-                         alt="QR Code PIX do BIX" 
+                         alt="QR Code PIX Baile Independência PD Ipiranga" 
                          id="qrCodeImage"
                          style="width: 210px; height: 210px; border-radius: 18px; display: block; margin: 0 auto; box-shadow: 0 8px 20px rgba(0,0,0,0.12); background: white;">
                     
@@ -567,7 +491,7 @@
             
             <div style="background: rgba(30,58,138,0.07); padding: 10px; border-radius: 20px; margin-top: 12px;">
                 <p style="color: #1E3A8A; font-size: 13px; margin: 0;">
-                    <i class="fas fa-lightbulb"></i> <strong>Importante:</strong> Após escanear ou colar o código, <strong>insira o valor do lote vigente</strong> (consulte nosso Instagram/WhatsApp). O comprovante será seu ingresso!
+                    <i class="fas fa-lightbulb"></i> <strong>Importante:</strong> Após escanear ou colar o código, <strong>insira o valor do lote vigente</strong> (consulte nosso Instagram). O comprovante será seu ingresso!
                 </p>
             </div>
         </div>
@@ -580,12 +504,12 @@
                 <li><strong>Clique no botão vermelho/azul</strong> para copiar o código PIX (ou escaneie o QR Code)</li>
                 <li>Acesse seu <strong>internet banking / app do banco</strong> → área PIX</li>
                 <li>Escolha <strong>"PIX Copia e Cola"</strong> ou "Ler QR Code"</li>
-                <li><strong>Digite o valor correspondente ao lote atual</strong> (consulte os stories ou grupo de vendas)</li>
+                <li><strong>Digite o valor correspondente ao lote atual</strong> (consulte o Instagram @pdipiranga)</li>
                 <li>Confirme os dados e finalize o pagamento</li>
                 <li>Guarde o comprovante (foto ou PDF) — ele será solicitado na entrada</li>
             </ol>
             <div class="aviso-lote">
-                <i class="fas fa-tag"></i> <strong>Lotes:</strong> Os preços são liberados por etapas. Quanto mais cedo, melhor o valor! Fique ligado nas redes da @pdipiranga ou entre em contato pelo WhatsApp.
+                <i class="fas fa-tag"></i> <strong>Lotes:</strong> Os preços são liberados por etapas. Quanto mais cedo, melhor o valor! Fique ligado no <a href="https://www.instagram.com/pdipiranga/" target="_blank" style="color:#1E3A8A; font-weight:600; text-decoration:none;">@pdipiranga</a>.
             </div>
         </div>
         
@@ -597,16 +521,17 @@
             </a>
         </div>
         
-        <p style="margin-top: 18px; color: #6B7280; font-size: 12px; text-align: center;">
-            <i class="fab fa-instagram"></i> Acompanhe @pdipiranga para valores dos lotes e novidades
-        </p>
-        <p style="margin-top: 8px; color: #aaa; font-size: 10px; text-align: center;">
-            <i class="fas fa-lock"></i> Pagamento processado via PIX seguro | Baile da Independência 30/04 | Ingressos limitados por lote
-        </p>
+        <!-- Rodapé sucinto com apenas Instagram -->
+        <div class="footer-simple">
+            <a href="https://www.instagram.com/pdipiranga/" target="_blank" class="instagram-link">
+                <i class="fab fa-instagram"></i> @pdipiranga
+            </a>
+            <span style="margin: 0 8px">•</span>
+            <span>Baile da Independência 30/04</span>
+        </div>
     </div>
 
     <script>
-        // MESMO CÓDIGO PIX ORIGINAL - SEM ALTERAÇÕES
         const PIX_CODE = "00020101021226900014BR.GOV.BCB.PIX2568pix-qr.mercadopago.com/instore/p/v2/7589642fcde745279b73b74b31519c3d43540016com.mercadolibre0130https://mpago.la/pos/1224719795204000053039865802BR5925PE DESCALCO UNIDADE IPIRA6009SAO PAULO62070503***63048E77";
         
         const copyButton = document.getElementById('copyButton');
@@ -614,7 +539,6 @@
         const qrCodeImage = document.getElementById('qrCodeImage');
         const qrFallback = document.getElementById('qrFallback');
         
-        // Verifica se a imagem do QR Code carrega corretamente
         if (qrCodeImage) {
             qrCodeImage.onerror = function() {
                 qrCodeImage.style.display = 'none';
@@ -628,13 +552,11 @@
             if(qrFallback) qrFallback.style.display = 'block';
         }
         
-        // Função de copiar com feedback aprimorado
         async function copyPixCode() {
             try {
                 await navigator.clipboard.writeText(PIX_CODE);
                 showSuccessFeedback();
             } catch (err) {
-                // fallback legacy
                 const textarea = document.createElement('textarea');
                 textarea.value = PIX_CODE;
                 document.body.appendChild(textarea);
@@ -702,12 +624,10 @@
         }
         
         copyButton.addEventListener('click', copyPixCode);
-        
         copyButton.addEventListener('touchstart', (e) => {
             if (navigator.vibrate) navigator.vibrate(30);
         });
         
-        // carregamento: checar fallback imagem
         window.addEventListener('load', function() {
             if (qrCodeImage && qrCodeImage.src) {
                 setTimeout(() => {

@@ -1,1 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>PIX do BIX - Baile da Independência ou Xote | PD Ipiranga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
+        }
+        
+        :root {
+            --verde: #32CD32;
+            --verde-escuro: #28a428;
+            --amarelo: #FFD700;
+            --laranja: #FF8C00;
+            --roxo: #8B5CF6;
+            --azul-independencia: #1E3A8A;
+            --vermelho-brasil: #E11D48;
+            --branco: #FFFFFF;
+            --cinza-claro: #f8f9fa;
+            --cinza: #4B5563;
+            --preto: #1F2937;
+            --dourado: #F59E0B;
+            --radius: 20px;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0B2B26 0%, #1E3A8A 40%, #9B2C2C 80%, #F59E0B 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-size: 300% 300%;
+            animation: gradientMove 18s ease infinite;
+        }
+        
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            background: var(--branco);
+            border-radius: var(--radius);
+            padding: 28px;
+            max-width: 550px;
+            width: 100%;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #FFD700, #F59E0B, #E11D48, #1E3A8A, #0B2B26);
+        }
+        
+        .container::after {
+            content: "🇧🇷";
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            font-size: 40px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .logo {
+            width: 95px;
+            height: 95px;
+            background: linear-gradient(145deg, #FFD700, #F59E0B);
+            border-radius: 50%;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #2C3E2F;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+            border: 2px solid rgba(255,255,200,0.6);
+        }
+        
+        .carnaval-title {
+            background: linear-gradient(135deg, #1E3A8A, #9B2C2C);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 26px;
+            margin-bottom: 6px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            text-transform: uppercase;
+        }
+        
+        .subtitle {
+            color: #E11D48;
+            font-size: 17px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            background: rgba(225,29,72,0.08);
+            display: inline-block;
+            padding: 4px 18px;
+            border-radius: 40px;
+        }
+        
+        .event-info {
+            background: linear-gradient(115deg, #FEF9E6, #FFF7ED);
+            padding: 22px 18px;
+            border-radius: 24px;
+            margin: 20px 0;
+            text-align: left;
+            border-left: 6px solid #F59E0B;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 12px 0;
+            color: var(--cinza);
+            font-size: 16px;
+            font-weight: 500;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .info-highlight {
+            color: #1E3A8A;
+            font-weight: 800;
+            background: rgba(30,58,138,0.08);
+            padding: 2px 12px;
+            border-radius: 30px;
+        }
+        
+        .open-bar-btn {
+            background: linear-gradient(105deg, #1E3A8A, #2563EB);
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            border-radius: 60px;
+            width: 100%;
+            margin: 15px 0 5px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 5px 15px rgba(30,58,138,0.3);
+        }
+        
+        .copy-btn {
+            background: linear-gradient(105deg, #1E3A8A, #9B2C2C);
+            color: var(--branco);
+            border: none;
+            padding: 18px;
+            font-size: 18px;
+            border-radius: 60px;
+            cursor: pointer;
+            width: 100%;
+            margin: 20px 0 12px;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 10px 20px rgba(30,58,138,0.3);
+        }
+        
+        .copy-btn:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(105deg, #2B4A9E, #B53A48);
+            box-shadow: 0 15px 28px rgba(155,44,44,0.4);
+        }
+        
+        .copy-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .success-msg {
+            background: #DCFCE7;
+            color: #166534;
+            padding: 14px;
+            border-radius: 50px;
+            margin: 10px 0;
+            display: none;
+            animation: fadeSlide 0.3s;
+            border-left: 5px solid #22C55E;
+            font-weight: 500;
+        }
+        
+        .instructions {
+            background: #EFF6FF;
+            padding: 20px;
+            border-radius: 24px;
+            margin-top: 25px;
+            text-align: left;
+            border-left: 5px solid #3B82F6;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            margin-top: 12px;
+        }
+        
+        .instructions li {
+            margin: 8px 0;
+            color: var(--cinza);
+        }
+        
+        .qr-section {
+            margin: 20px 0;
+            padding: 18px 12px;
+            background: #FEF9E6;
+            border-radius: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .qr-code-wrapper {
+            background: white;
+            padding: 12px;
+            border-radius: 24px;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        
+        #qrCodeImage {
+            width: 210px;
+            height: 210px;
+            border-radius: 16px;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            object-fit: contain;
+            background: white;
+        }
+        
+        .qr-fallback {
+            width: 180px;
+            height: 180px;
+            background: #f3f4f6;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border: 2px dashed #9CA3AF;
+        }
+        
+        .info-lotes {
+            background: linear-gradient(135deg, #FFFBEB, #FEF3C7);
+            border-radius: 24px;
+            padding: 18px;
+            margin: 20px 0 10px;
+            border: 1px solid #FDE68A;
+            text-align: center;
+        }
+        
+        .info-lotes i {
+            font-size: 28px;
+            color: #F59E0B;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 12px;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: scale(1.02);
+        }
+        
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 8px 20px rgba(30,58,138,0.3); }
+            50% { transform: scale(1.02); box-shadow: 0 12px 28px rgba(30,58,138,0.5); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 1.6s infinite ease-in-out;
+        }
+        
+        @media (max-width: 500px) {
+            .container {
+                padding: 20px;
+            }
+            .carnaval-title {
+                font-size: 20px;
+            }
+            .subtitle {
+                font-size: 14px;
+            }
+            .copy-btn {
+                padding: 16px;
+                font-size: 15px;
+            }
+            .info-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+        }
+        
+        .badge-edicao {
+            background: #9B2C2C;
+            color: #FFE4B5;
+            border-radius: 40px;
+            padding: 4px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        
+        .pix-info {
+            text-align: center;
+            margin: 15px 0;
+            padding: 12px;
+            background: #F3F4F6;
+            border-radius: 40px;
+        }
+        
+        .footer-simple {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #E5E7EB;
+            text-align: center;
+            font-size: 13px;
+            color: #6B7280;
+        }
+        
+        .instagram-link {
+            color: #1E3A8A;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        
+        .instagram-link:hover {
+            color: #E11D48;
+            text-decoration: underline;
+        }
+        
+        .phone-link {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .phone-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-ticket-alt"></i>
+        </div>
+        
+        <div class="badge-edicao">
+            <i class="fas fa-star-of-life"></i> 3ª Edição Especial · Ingressos por Lote
+        </div>
+        
+        <h1 class="carnaval-title">BIX - Baile da Independência ou Xote</h1>
+        <p class="subtitle">Vem pro melhor evento do semestre!</p>
+        
+        <div class="event-info">
+            <div class="info-item">
+                <span><i class="fas fa-calendar-alt" style="color:#E11D48;"></i> Data especial:</span>
+                <span class="info-highlight"><i class="far fa-calendar-check"></i> 30 de Abril</span>
+            </div>
+            <div class="info-item">
+                <span><i class="fas fa-clock" style="color:#F59E0B;"></i> A partir das:</span>
+                <span class="info-highlight">22h30</span>
+            </div>
+            <div class="info-item">
+                <span><i class="fas fa-map-marker-alt" style="color:#1E3A8A;"></i> Local:</span>
+                <span class="info-highlight">PD Ipiranga — Rua Lino Coutinho, 1927</span>
+            </div>
+        </div>
+        
+        <!-- Botão Open Bar (estilo azul) -->
+        <div class="open-bar-btn">
+            <i class="fas fa-beer"></i> 50L de Chopp + Refri e Suco liberados! <i class="fas fa-glass-cheers"></i>
+        </div>
+        
+        <!-- Bloco único de lotes unificado -->
+        <div class="info-lotes">
+            <i class="fas fa-chart-simple"></i>
+            <p style="font-weight: 800; color:#1E3A8A; margin: 8px 0 4px;">🎟️ INGRESSOS DIVULGADOS EM LOTES</p>
+            <p style="color: #4B5563; font-size: 14px;">Os valores serão divulgados por lote conforme a demanda. Fique atento aos nossos canais oficiais e garanta o seu com o melhor preço!</p>
+            <div style="margin-top: 12px; padding: 10px; background: #FEF3C7; border-radius: 16px; font-size: 13px; color: #92400E;">
+                <i class="fas fa-tag"></i> <strong>Lotes:</strong> Os preços são liberados por etapas. Quanto mais cedo, melhor o valor! Fique ligado no <a href="https://www.instagram.com/pdipiranga/" target="_blank" style="color:#1E3A8A; font-weight:600; text-decoration:none;">@pdipiranga</a>.
+            </div>
+        </div>
+        
+        <div class="pix-info">
+            <i class="fas fa-qrcode" style="color:#1E3A8A;"></i> 
+            <strong>Pague com PIX</strong> (Copia e Cola ou QR Code) — valor conforme lote vigente
+        </div>
+        
+        <button class="copy-btn pulse-animation" id="copyButton">
+            <i class="fas fa-copy"></i> COPIAR CÓDIGO PIX (Copia e Cola)
+        </button>
+        
+        <div class="success-msg" id="successMsg">
+            <i class="fas fa-check-circle"></i> ✅ Código PIX copiado! Agora cole no app do banco e informe o valor correspondente ao lote atual.
+        </div>
+        
+        <div class="qr-section">
+            <p style="margin-bottom: 15px; font-weight: 800; color: #1E3A8A; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <i class="fas fa-qrcode fa-lg"></i> 
+                <span>PAGUE VIA QR CODE - MAIS RÁPIDO</span>
+            </p>
+            
+            <div style="text-align: center; margin: 10px 0 5px;">
+                <div class="qr-code-wrapper">
+                    <img src="https://raw.githubusercontent.com/fabioboas/PixesPdIpi/main/qr-codes/QrBixNatalino.png" 
+                         alt="QR Code PIX Baile Independência PD Ipiranga" 
+                         id="qrCodeImage"
+                         style="width: 210px; height: 210px; border-radius: 18px; display: block; margin: 0 auto; box-shadow: 0 8px 20px rgba(0,0,0,0.12); background: white;">
+                    
+                    <div id="qrFallback" style="display: none; margin-top: 10px;">
+                        <div style="width: 180px; height: 180px; background: #FEF3C7; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; border: 2px dashed #F59E0B;">
+                            <i class="fas fa-camera-retro" style="font-size: 48px; color:#9B2C2C;"></i>
+                            <div style="margin-top: 12px; color:#1E3A8A; font-weight: 500;">Escaneie no app</div>
+                            <div style="font-size: 12px;">Use cópia e cola também</div>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 14px; color: #2B6E3C; font-size: 13px; font-weight: 500;">
+                        <i class="fas fa-camera"></i> Abra o app do banco → PIX → Escanear QR Code
+                    </p>
+                </div>
+            </div>
+            
+            <div style="background: rgba(30,58,138,0.07); padding: 10px; border-radius: 20px; margin-top: 12px;">
+                <p style="color: #1E3A8A; font-size: 13px; margin: 0;">
+                    <i class="fas fa-lightbulb"></i> <strong>Importante:</strong> Após escanear ou colar o código, <strong>insira o valor do lote vigente</strong> (consulte nosso Instagram). O comprovante será seu ingresso!
+                </p>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <p style="font-weight: 800; margin-bottom: 10px; color: #1E3A8A; display: flex; gap: 8px;">
+                <i class="fas fa-mobile-alt"></i> COMO PAGAR COM PIX (lote dinâmico):
+            </p>
+            <ol>
+                <li><strong>Clique no botão vermelho/azul</strong> para copiar o código PIX (ou escaneie o QR Code)</li>
+                <li>Acesse seu <strong>internet banking / app do banco</strong> → área PIX</li>
+                <li>Escolha <strong>"PIX Copia e Cola"</strong> ou "Ler QR Code"</li>
+                <li><strong>Digite o valor correspondente ao lote atual</strong> (consulte o Instagram @pdipiranga)</li>
+                <li>Confirme os dados e finalize o pagamento</li>
+                <li>Guarde o comprovante (foto ou PDF) — ele será solicitado na entrada</li>
+            </ol>
+        </div>
+        
+        <!-- WhatsApp Button -->
+        <div style="margin: 20px 0 10px; text-align: center;">
+            <a href="https://wa.me/5511971953219?text=Oi!%20Gostaria%20de%20informações%20sobre%20os%20lotes%20do%20Baile%20da%20Independência" target="_blank" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Dúvidas sobre lotes? Fale conosco
+            </a>
+        </div>
+        
+        <!-- Rodapé com Instagram e telefone -->
+        <div class="footer-simple">
+            <a href="https://www.instagram.com/pdipiranga/" target="_blank" class="instagram-link">
+                <i class="fab fa-instagram"></i> @pdipiranga
+            </a>
+            <span style="margin: 0 8px">•</span>
+            <a href="https://wa.me/5511971953219" target="_blank" class="phone-link">
+                <i class="fab fa-whatsapp"></i> (11) 97195-3219
+            </a>
+            <span style="margin: 0 8px">•</span>
+            <span>Baile da Independência 30/04</span>
+        </div>
+    </div>
 
+    <script>
+        const PIX_CODE = "00020101021226900014BR.GOV.BCB.PIX2568pix-qr.mercadopago.com/instore/p/v2/7589642fcde745279b73b74b31519c3d43540016com.mercadolibre0130https://mpago.la/pos/1224719795204000053039865802BR5925PE DESCALCO UNIDADE IPIRA6009SAO PAULO62070503***63048E77";
+        
+        const copyButton = document.getElementById('copyButton');
+        const successMsg = document.getElementById('successMsg');
+        const qrCodeImage = document.getElementById('qrCodeImage');
+        const qrFallback = document.getElementById('qrFallback');
+        
+        if (qrCodeImage) {
+            qrCodeImage.onerror = function() {
+                qrCodeImage.style.display = 'none';
+                if(qrFallback) qrFallback.style.display = 'block';
+            };
+            qrCodeImage.onload = function() {
+                qrCodeImage.style.display = 'block';
+                if(qrFallback) qrFallback.style.display = 'none';
+            };
+        } else {
+            if(qrFallback) qrFallback.style.display = 'block';
+        }
+        
+        async function copyPixCode() {
+            try {
+                await navigator.clipboard.writeText(PIX_CODE);
+                showSuccessFeedback();
+            } catch (err) {
+                const textarea = document.createElement('textarea');
+                textarea.value = PIX_CODE;
+                document.body.appendChild(textarea);
+                textarea.select();
+                const success = document.execCommand('copy');
+                document.body.removeChild(textarea);
+          
